@@ -1,0 +1,109 @@
+.contenedor-login {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #141414;
+  padding: 20px;
+}
+
+.caja-login {
+  background-color: #1f1f1f;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+.logo {
+  color: #E50914;
+  font-size: 32px;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.caja-login h2 {
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.alerta-error {
+  background-color: rgba(229, 9, 20, 0.2);
+  border: 1px solid #E50914;
+  color: #ff8080;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.campo {
+  margin-bottom: 16px;
+}
+
+.campo label {
+  display: block;
+  font-size: 13px;
+  color: #cccccc;
+  margin-bottom: 6px;
+}
+
+.campo input {
+  width: 100%;
+  padding: 12px;
+  background-color: #2b2b2b;
+  border: 1px solid #3d3d3d;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+}
+
+.campo input:focus {
+  border-color: #E50914;
+}
+
+.btn-ingresar {
+  width: 100%;
+  padding: 12px;
+  background-color: #E50914;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-ingresar:hover:not(:disabled) {
+  background-color: #b80710;
+}
+
+.btn-ingresar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.credenciales-demo {
+  background-color: #141414;
+  border-left: 3px solid #E50914;
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #aaaaaa;
+}
+
+.credenciales-demo code {
+  color: #ffffff;
+  background-color: #2a2a2a;
+  padding: 2px 6px;
+  border-radius: 3px;
+}

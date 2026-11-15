@@ -1,0 +1,44 @@
+<div class="contenedor-login">
+  <div class="caja-login">
+    <h1 class="logo">RICKFLIX</h1>
+    <h2>Iniciar Sesión</h2>
+
+    <div *ngIf="errorMessage" class="alerta-error">
+      ⚠️ {{ errorMessage }}
+    </div>
+
+    <form (ngSubmit)="onSubmit()">
+      <div class="campo">
+        <label>Usuario</label>
+        <input
+          type="text"
+          [(ngModel)]="username"
+          name="username"
+          required
+          placeholder="Ingresa tu usuario"
+        />
+      </div>
+
+      <div class="campo">
+        <label>Contraseña</label>
+        <input
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          required
+          placeholder="Ingresa tu contraseña"
+        />
+      </div>
+
+      <button type="submit" class="btn-ingresar" [disabled]="loading">
+        {{ loading ? 'Conectando con NestJS...' : 'Ingresar' }}
+      </button>
+
+      <div class="credenciales-demo">
+        <p><strong>Credenciales de prueba:</strong></p>
+        <p>Usuario: <code>admin</code></p>
+        <p>Contraseña: <code>1234</code></p>
+      </div>
+    </form>
+  </div>
+</div>

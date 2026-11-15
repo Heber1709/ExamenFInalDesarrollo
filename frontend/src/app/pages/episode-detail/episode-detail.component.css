@@ -1,0 +1,156 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+.navegacion-superior {
+  margin-bottom: 20px;
+}
+
+.btn-volver {
+  color: #cccccc;
+  background-color: #222222;
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.btn-volver:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* Ficha */
+.ficha-episodio {
+  background-color: #1e1e1e;
+  border-left: 5px solid #E50914;
+  padding: 24px 30px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+.codigo-pill {
+  background-color: #E50914;
+  color: #ffffff;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 13px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.ficha-episodio h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.fecha {
+  color: #aaaaaa;
+  font-size: 15px;
+}
+
+.total-personajes {
+  color: #888888;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+/* Personajes */
+.seccion-personajes h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #333333;
+  padding-bottom: 10px;
+}
+
+.grid-personajes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.tarjeta-personaje {
+  background-color: #1e1e1e;
+  border: 1px solid #2d2d2d;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta-personaje:hover {
+  transform: translateY(-4px);
+  border-color: #E50914;
+}
+
+.foto-personaje {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+}
+
+.info-personaje {
+  padding: 12px;
+}
+
+.info-personaje h4 {
+  font-size: 15px;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.especie {
+  font-size: 13px;
+  color: #8c8c8c;
+  margin-bottom: 8px;
+}
+
+.estado-badge {
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.estado-badge.alive {
+  background-color: rgba(46, 204, 113, 0.2);
+  color: #2ecc71;
+}
+
+.estado-badge.dead {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+}
+
+.estado-badge.unknown {
+  background-color: rgba(149, 165, 166, 0.2);
+  color: #95a5a6;
+}
+
+.mensaje-estado {
+  text-align: center;
+  padding: 30px;
+  color: #aaaaaa;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #E50914;
+  border-radius: 50%;
+  animation: girar 0.8s linear infinite;
+  margin: 0 auto 10px;
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}

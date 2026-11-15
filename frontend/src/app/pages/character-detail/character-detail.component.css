@@ -1,0 +1,158 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+.navegacion-superior {
+  margin-bottom: 20px;
+}
+
+.btn-volver {
+  color: #cccccc;
+  background-color: #222222;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-volver:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.ficha-personaje {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  border: 1px solid #2d2d2d;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.columna-imagen {
+  flex: 0 0 320px;
+  background-color: #141414;
+}
+
+.foto-perfil {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.columna-datos {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.columna-datos h1 {
+  font-size: 32px;
+  margin: 10px 0 20px;
+}
+
+.lista-detalles {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #141414;
+  padding: 18px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+}
+
+.detalle-fila {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #262626;
+  padding-bottom: 8px;
+  font-size: 14px;
+}
+
+.detalle-fila:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.etiqueta {
+  color: #8c8c8c;
+  font-weight: 500;
+}
+
+.valor {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.estado-badge {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 10px;
+  border-radius: 12px;
+  align-self: flex-start;
+}
+
+.estado-badge.alive {
+  background-color: rgba(46, 204, 113, 0.2);
+  color: #2ecc71;
+}
+
+.estado-badge.dead {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+}
+
+.estado-badge.unknown {
+  background-color: rgba(149, 165, 166, 0.2);
+  color: #95a5a6;
+}
+
+.btn-rojo {
+  background-color: #E50914;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.btn-rojo:hover {
+  background-color: #b80710;
+}
+
+.mensaje-estado {
+  text-align: center;
+  padding: 40px;
+  color: #aaaaaa;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #E50914;
+  border-radius: 50%;
+  animation: girar 0.8s linear infinite;
+  margin: 0 auto 10px;
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 700px) {
+  .ficha-personaje {
+    flex-direction: column;
+  }
+  .columna-imagen {
+    flex: 0 0 250px;
+  }
+}

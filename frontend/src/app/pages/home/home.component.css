@@ -1,0 +1,163 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px 60px;
+}
+
+.header-section {
+  margin-bottom: 30px;
+  border-left: 5px solid #E50914;
+  padding-left: 15px;
+}
+
+.header-section h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.header-section .subtitle {
+  color: #aaaaaa;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Spinner */
+.mensaje-estado {
+  text-align: center;
+  padding: 50px 0;
+  color: #cccccc;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #E50914;
+  border-radius: 50%;
+  animation: girar 0.8s linear infinite;
+  margin: 0 auto 15px;
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+/* Error */
+.mensaje-error {
+  background-color: #1f1f1f;
+  border: 1px solid #E50914;
+  border-radius: 8px;
+  padding: 24px;
+  max-width: 600px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.mensaje-error h3 {
+  color: #E50914;
+  margin-bottom: 10px;
+}
+
+.ayuda-backend {
+  background-color: #141414;
+  padding: 12px;
+  border-radius: 4px;
+  margin: 15px 0;
+  text-align: left;
+  font-size: 13px;
+}
+
+.ayuda-backend code {
+  display: block;
+  background-color: #000000;
+  color: #2ecc71;
+  padding: 8px;
+  border-radius: 4px;
+  margin-top: 6px;
+  font-family: monospace;
+}
+
+.btn-rojo {
+  background-color: #E50914;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-rojo:hover {
+  background-color: #b80710;
+}
+
+/* Cuadrícula de Episodios */
+.grid-episodios {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.tarjeta-episodio {
+  background-color: #1e1e1e;
+  border: 1px solid #2d2d2d;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-episodio:hover {
+  transform: translateY(-5px);
+  border-color: #E50914;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.codigo-episodio {
+  display: inline-block;
+  background-color: #E50914;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 4px;
+  align-self: flex-start;
+  margin-bottom: 12px;
+}
+
+.titulo-episodio {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.detalles-episodio {
+  font-size: 13px;
+  color: #8c8c8c;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.btn-ver-detalle {
+  background-color: transparent;
+  color: #E50914;
+  border: 1px solid #E50914;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.tarjeta-episodio:hover .btn-ver-detalle {
+  background-color: #E50914;
+  color: #ffffff;
+}

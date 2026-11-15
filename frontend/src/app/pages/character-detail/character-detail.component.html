@@ -1,0 +1,61 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="navegacion-superior">
+    <button class="btn-volver" (click)="volver()">&larr; Volver</button>
+  </div>
+
+  <div *ngIf="cargando" class="mensaje-estado">
+    <div class="spinner"></div>
+    <p>Cargando información del personaje...</p>
+  </div>
+
+  <div *ngIf="mensajeError && !cargando" class="mensaje-error">
+    <h3>⚠️ Error</h3>
+    <p>{{ mensajeError }}</p>
+    <button class="btn-rojo" (click)="volver()">Volver</button>
+  </div>
+
+  <div *ngIf="personaje && !cargando" class="ficha-personaje">
+    <div class="columna-imagen">
+      <img [src]="personaje.image" [alt]="personaje.name" class="foto-perfil" />
+    </div>
+
+    <div class="columna-datos">
+      <span class="estado-badge" [ngClass]="personaje.status.toLowerCase()">
+        ● {{ traducirEstado(personaje.status) }}
+      </span>
+
+      <h1>{{ personaje.name }}</h1>
+
+      <div class="lista-detalles">
+        <div class="detalle-fila">
+          <span class="etiqueta">Especie:</span>
+          <span class="valor">{{ personaje.species }}</span>
+        </div>
+
+        <div class="detalle-fila">
+          <span class="etiqueta">Género:</span>
+          <span class="valor">{{ personaje.gender === 'Male' ? 'Masculino' : (personaje.gender === 'Female' ? 'Femenino' : personaje.gender) }}</span>
+        </div>
+
+        <div class="detalle-fila">
+          <span class="etiqueta">Origen:</span>
+          <span class="valor">{{ personaje.origin.name }}</span>
+        </div>
+
+        <div class="detalle-fila">
+          <span class="etiqueta">Ubicación actual:</span>
+          <span class="valor">{{ personaje.location.name }}</span>
+        </div>
+
+        <div class="detalle-fila">
+          <span class="etiqueta">Episodios donde aparece:</span>
+          <span class="valor">{{ personaje.episode.length }} episodios</span>
+        </div>
+      </div>
+
+      <button class="btn-rojo" (click)="volver()">Volver al Episodio</button>
+    </div>
+  </div>
+</div>

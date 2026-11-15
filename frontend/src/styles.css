@@ -1,0 +1,134 @@
+/* ===================================================
+   ESTILOS GLOBALES - TEMA NETFLIX (RICKFLIX)
+   =================================================== */
+
+:root {
+  --netflix-red: #E50914;
+  --netflix-red-hover: #b80710;
+  --netflix-black: #141414;
+  --netflix-dark: #181818;
+  --netflix-card: #222222;
+  --netflix-card-hover: #2f2f2f;
+  --netflix-gray: #8c8c8c;
+  --netflix-light-gray: #e5e5e5;
+  --text-white: #ffffff;
+  --font-netflix: 'Bebas Neue', Impact, sans-serif;
+  --font-main: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--netflix-black);
+  color: var(--text-white);
+  font-family: var(--font-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* Scrollbar estilo Netflix */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--netflix-black);
+}
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--netflix-red);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Botones principales estilo Netflix */
+.btn-netflix {
+  background-color: var(--netflix-red);
+  color: var(--text-white);
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-netflix:hover {
+  background-color: var(--netflix-red-hover);
+  transform: scale(1.02);
+}
+
+.btn-netflix-secondary {
+  background-color: rgba(109, 109, 110, 0.7);
+  color: var(--text-white);
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  cursor: pointer;
+}
+
+.btn-netflix-secondary:hover {
+  background-color: rgba(109, 109, 110, 0.4);
+  transform: scale(1.02);
+}
+
+/* Badges y chips */
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-status.alive {
+  background-color: rgba(46, 204, 113, 0.2);
+  color: #2ecc71;
+  border: 1px solid #2ecc71;
+}
+
+.badge-status.dead {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+}
+
+.badge-status.unknown {
+  background-color: rgba(149, 165, 166, 0.2);
+  color: #95a5a6;
+  border: 1px solid #95a5a6;
+}
+

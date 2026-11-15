@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <!-- Título principal -->
+  <div class="header-section">
+    <h1>Catálogo de Episodios</h1>
+    <p class="subtitle">Datos consumidos directamente desde tu API en NestJS (Rick & Morty)</p>
+  </div>
+
+  <!-- Estado de carga -->
+  <div *ngIf="loading" class="mensaje-estado">
+    <div class="spinner"></div>
+    <p>Cargando episodios...</p>
+  </div>
+
+  <!-- Mensaje de error si el Backend está apagado -->
+  <div *ngIf="errorMessage && !loading" class="mensaje-error">
+    <h3>⚠️ Error de conexión</h3>
+    <p>{{ errorMessage }}</p>
+    <div class="ayuda-backend">
+      <p><strong>¿Cómo solucionarlo?</strong></p>
+      <p>Abre una terminal separada y ejecuta:</p>
+      <code>cd backend && npm run start:dev</code>
+    </div>
+    <button class="btn-rojo" (click)="cargarEpisodios()">Reintentar conexión</button>
+  </div>
+
+  <!-- Cuadrícula de episodios estilo Netflix -->
+  <div class="grid-episodios" *ngIf="!loading && !errorMessage">
+    <div
+      *ngFor="let ep of episodes"
+      class="tarjeta-episodio"
+      [routerLink]="['/episode', ep.id]"
+    >
+      <div class="codigo-episodio">{{ ep.episode }}</div>
+      <h3 class="titulo-episodio">{{ ep.name }}</h3>
+      <div class="detalles-episodio">
+        <span>📅 {{ ep.air_date }}</span>
+        <span>👥 {{ ep.characters.length }} personajes</span>
+      </div>
+      <button class="btn-ver-detalle">Ver Detalle &rarr;</button>
+    </div>
+  </div>
+</div>

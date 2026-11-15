@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="navegacion-superior">
+    <a routerLink="/home" class="btn-volver">&larr; Volver al Catálogo</a>
+  </div>
+
+  <div *ngIf="cargando" class="mensaje-estado">
+    <div class="spinner"></div>
+    <p>Cargando información del episodio...</p>
+  </div>
+
+  <div *ngIf="mensajeError && !cargando" class="mensaje-error">
+    <h3>⚠️ Error</h3>
+    <p>{{ mensajeError }}</p>
+    <a routerLink="/home" class="btn-rojo">Volver</a>
+  </div>
+
+  <div *ngIf="episodio && !cargando">
+    <!-- Ficha del episodio -->
+    <div class="ficha-episodio">
+      <span class="codigo-pill">{{ episodio.episode }}</span>
+      <h1>{{ episodio.name }}</h1>
+      <p class="fecha">Estrenado el: <strong>{{ episodio.air_date }}</strong></p>
+      <p class="total-personajes">Aparición de {{ episodio.characters.length }} personajes en total.</p>
+    </div>
+
+    <!-- Lista de Personajes -->
+    <div class="seccion-personajes">
+      <h2>Personajes que aparecen en este episodio</h2>
+
+      <div *ngIf="cargandoPersonajes" class="mensaje-estado">
+        <div class="spinner"></div>
+        <p>Consultando personajes mediante el Backend NestJS...</p>
+      </div>
+
+      <div class="grid-personajes" *ngIf="!cargandoPersonajes">
+        <div
+          *ngFor="let p of personajes"
+          class="tarjeta-personaje"
+          [routerLink]="['/character', p.id]"
+        >
+          <img [src]="p.image" [alt]="p.name" class="foto-personaje" />
+          <div class="info-personaje">
+            <h4>{{ p.name }}</h4>
+            <p class="especie">{{ p.species }}</p>
+            <span class="estado-badge" [ngClass]="p.status.toLowerCase()">
+              {{ traducirEstado(p.status) }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
